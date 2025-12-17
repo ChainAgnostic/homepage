@@ -1,0 +1,21 @@
+{
+  "name": "Chain Agnostic Standards Alliance",
+  "short_name": "CASA",
+  "description": "Creating standards for blockchain interoperability",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "400x400",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["blockchain", "technology", "standards"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

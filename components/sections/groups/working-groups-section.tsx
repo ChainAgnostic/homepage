@@ -1,127 +1,100 @@
-import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { BookOpen, Code, Users } from "lucide-react";
 
-const workingGroups = [
+const workingGroupTypes = [
   {
     name: "Editorial",
-    scope: (
-      <>
-        New{" "}
-        <Link
-          href="https://chainagnostic.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:underline"
-        >
-          CAIPs
-        </Link>{" "}
-        and{" "}
-        <Link
-          href="https://namespaces.chainagnostic.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:underline"
-        >
-          Namespaces
-        </Link>
-      </>
-    ),
-    frequency: "every 4 weeks",
-    chair: "@bumblefudge",
+    icon: BookOpen,
+    description:
+      "Review, refine, and approve new CAIPs and namespace specifications. Editorial groups ensure standards are well-documented, consistent, and meet the alliance's quality criteria.",
+    focus: [
+      "CAIP proposal review",
+      "Namespace specifications",
+      "Documentation standards",
+      "Specification governance",
+    ],
   },
   {
-    name: "Addressing",
-    scope: "CAIP-2, -10, -19; URN/URI systems",
-    frequency: "Sporadic/By request",
-    chair: "@bumblefudge",
+    name: "Technical",
+    icon: Code,
+    description:
+      "Deep dive into implementation details, protocols, and technical challenges. Technical groups develop and maintain specific standards for blockchain interoperability.",
+    focus: [
+      "Protocol development",
+      "Implementation guidelines",
+      "Security considerations",
+      "Cross-chain compatibility",
+    ],
   },
   {
-    name: "JSON-RPC",
-    scope: "CAIP-25, -27",
-    frequency: "Sporadic/By request",
-    chair: "@hmalik88",
-  },
-  {
-    name: "CACAO/AuthZ",
-    scope: (
-      <>
-        CAIP-74, -122, -168;{" "}
-        <Link
-          href="https://github.com/chainAgnostic/varsig"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:underline"
-        >
-          varsig
-        </Link>{" "}
-        &{" "}
-        <Link
-          href="https://github.com/chainAgnostic/multidid"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:underline"
-        >
-          multidid
-        </Link>
-        , interop with UCAN and ZCAP-LD
-      </>
-    ),
-    frequency: "every 4 weeks",
-    chair: "@bumblefudge/TBD",
-  },
-  {
-    name: "Browser Security",
-    scope: "CAIP-169, -171",
-    frequency: "Sporadic/By request",
-    chair: "@kdenhartog",
-  },
-  {
-    name: "Secure Design",
-    scope: "UX<>Security, Privacy",
-    frequency: "every 4 weeks",
-    chair: "@depatchedmode",
+    name: "Community",
+    icon: Users,
+    description:
+      "Foster collaboration, outreach, and adoption of CASA standards. Community groups connect developers, organize events, and promote best practices across the ecosystem.",
+    focus: [
+      "Developer outreach",
+      "Educational resources",
+      "Ecosystem partnerships",
+      "Adoption initiatives",
+    ],
   },
 ];
 
 export function WorkingGroupsSection() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-muted/30">
       <div className="container px-4 mx-auto max-w-7xl">
-        <h2 className="text-3xl font-bold mb-8">List of working groups</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">Types of Working Groups</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            CASA working groups are organized around specific areas of focus,
+            bringing together experts to advance blockchain interoperability
+            standards.
+          </p>
+        </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left py-4 px-4 font-semibold">
-                  Working Group
-                </th>
-                <th className="text-left py-4 px-4 font-semibold">Scope</th>
-                <th className="text-left py-4 px-4 font-semibold">
-                  Meeting Frequency
-                </th>
-                <th className="text-left py-4 px-4 font-semibold">Chair</th>
-              </tr>
-            </thead>
-            <tbody>
-              {workingGroups.map((group, index) => (
-                <tr
-                  key={index}
-                  className="border-b border-border hover:bg-muted/50 transition-colors"
-                >
-                  <td className="py-4 px-4 font-medium">{group.name}</td>
-                  <td className="py-4 px-4 text-muted-foreground">
-                    {group.scope}
-                  </td>
-                  <td className="py-4 px-4 text-muted-foreground">
-                    {group.frequency}
-                  </td>
-                  <td className="py-4 px-4 text-muted-foreground font-mono text-sm">
-                    {group.chair}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {workingGroupTypes.map((group) => {
+            const Icon = group.icon;
+            return (
+              <Card
+                key={group.name}
+                className="border-border hover:shadow-lg transition-shadow"
+              >
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle>{group.name}</CardTitle>
+                  <CardDescription>{group.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <p className="text-sm font-semibold text-foreground">
+                      Key Focus Areas:
+                    </p>
+                    <ul className="space-y-1.5">
+                      {group.focus.map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-sm text-muted-foreground flex items-start"
+                        >
+                          <span className="text-primary mr-2">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

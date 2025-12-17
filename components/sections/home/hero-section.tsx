@@ -22,7 +22,7 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden border-b border-border">
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
-      <div className="container px-4 py-24 md:py-32 mx-auto max-w-7xl relative">
+      <div className="container px-4 pt-12 pb-24 md:py-32 mx-auto max-w-7xl relative">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="max-w-3xl">
             <StatusBadge>Building Chain-Agnostic Standards</StatusBadge>

@@ -11,11 +11,16 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://chainagnostic.org";
+
 export const metadata: Metadata = {
-  title: "CASA | Chain Agnostic Standards Alliance",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "CASA | Chain Agnostic Standards Alliance",
+    template: "%s | CASA",
+  },
   description:
     "CASA is a self-organized alliance of blockchain developers creating standards that support interoperability and facilitate communication between protocols, software, and companies.",
-  generator: "v0.app",
   keywords: [
     "blockchain",
     "standards",
@@ -23,11 +28,26 @@ export const metadata: Metadata = {
     "CAIP",
     "chain agnostic",
     "web3",
+    "blockchain protocols",
+    "cross-chain",
+    "crypto standards",
+    "blockchain developers",
   ],
+  authors: [{ name: "Chain Agnostic Standards Alliance" }],
+  creator: "Chain Agnostic Standards Alliance",
+  publisher: "Chain Agnostic Standards Alliance",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: "Chain Agnostic Standards Alliance",
-    description: "Creating standards for blockchain interoperability",
     type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Chain Agnostic Standards Alliance",
+    title: "CASA | Chain Agnostic Standards Alliance",
+    description: "Creating standards for blockchain interoperability",
     images: [
       {
         url: "/logo.jpg",
@@ -38,10 +58,22 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Chain Agnostic Standards Alliance",
     description: "Creating standards for blockchain interoperability",
     images: ["/logo.jpg"],
+    creator: "@ChainAgnostic",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: [
@@ -60,6 +92,7 @@ export const metadata: Metadata = {
     ],
     apple: "/logo.jpg",
   },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -67,8 +100,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Chain Agnostic Standards Alliance",
+    alternateName: "CASA",
+    url: siteUrl,
+    logo: `${siteUrl}/logo.jpg`,
+    description:
+      "A self-organized alliance of blockchain developers creating standards that support interoperability and facilitate communication between protocols, software, and companies.",
+    sameAs: [
+      "https://github.com/ChainAgnostic",
+      "https://twitter.com/ChainStandards",
+    ],
+  };
+
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans antialiased">
         <Header />
         {children}

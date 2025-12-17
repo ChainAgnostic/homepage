@@ -60,7 +60,13 @@ export function Header() {
           asChild
           className="hidden md:inline-flex bg-transparent"
         >
-          <Link href="/#join">Join Alliance</Link>
+          <Link
+            href="https://github.com/ChainAgnostic/CAIPs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View CAIPs
+          </Link>
         </Button>
       </div>
     </header>
