@@ -13,7 +13,7 @@ export function RolesSection() {
         "Topical clusters of CAIPs, namespaces, and other repositories/workstreams. These change over time according to activity.",
     },
     {
-      title: "Editorial Working Group",
+      title: "Editorial Group",
       description:
         "A subset of membership including the authors of accepted CAIPs committed to ongoing review and maintenance of the CAIPs and namespaces.",
     },

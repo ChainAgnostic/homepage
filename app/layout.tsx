@@ -77,20 +77,20 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    other: [
       {
-        url: "/logo.jpg",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/logo.jpg",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+        color: "#000000",
       },
     ],
-    apple: "/logo.jpg",
   },
   manifest: "/manifest.json",
 };

@@ -6,7 +6,7 @@ import { CTASection } from "@/components/sections/home/cta-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Chain Agnostic Standards Alliance",
   description:
     "Join the Chain Agnostic Standards Alliance (CASA) - a collaborative community of blockchain developers creating interoperability standards across all blockchain protocols.",
   openGraph: {
