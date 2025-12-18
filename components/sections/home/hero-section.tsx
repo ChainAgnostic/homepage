@@ -7,16 +7,16 @@ import { StatusBadge } from "@/components/ui/status-badge";
 
 export function HeroSection() {
   const blockchainLogos = [
-    { src: "/images/ethereum.png", alt: "Ethereum" },
-    { src: "/images/filecoin.png", alt: "Filecoin" },
-    { src: "/images/cosmos.png", alt: "Cosmos" },
-    { src: "/images/bitcoin.png", alt: "Bitcoin" },
-    { src: "/images/polkadot.png", alt: "Polkadot" },
-    { src: "/images/solana.png", alt: "Solana" },
-    { src: "/images/stellar.png", alt: "Stellar" },
-    { src: "/images/sui.png", alt: "Sui" },
-    { src: "/images/algorand.png", alt: "Algorand" },
-    { src: "/images/hedera.png", alt: "Hedera" },
+    { src: "/images/ethereum.webp", alt: "Ethereum" },
+    { src: "/images/filecoin.webp", alt: "Filecoin" },
+    { src: "/images/cosmos.webp", alt: "Cosmos" },
+    { src: "/images/bitcoin.webp", alt: "Bitcoin" },
+    { src: "/images/polkadot.webp", alt: "Polkadot" },
+    { src: "/images/solana.webp", alt: "Solana" },
+    { src: "/images/stellar.webp", alt: "Stellar" },
+    { src: "/images/sui.webp", alt: "Sui" },
+    { src: "/images/algorand.webp", alt: "Algorand" },
+    { src: "/images/hedera.webp", alt: "Hedera" },
   ];
 
   return (
@@ -78,6 +78,8 @@ export function HeroSection() {
                       width={48}
                       height={48}
                       className="object-contain"
+                      priority={index < 5}
+                      loading={index < 5 ? "eager" : "lazy"}
                     />
                   </div>
                 </div>
