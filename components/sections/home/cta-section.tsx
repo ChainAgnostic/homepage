@@ -32,7 +32,7 @@ export function CTASection() {
               asChild
               className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             >
-              <Link href="#members">View Members</Link>
+              <Link href="/members">View Members</Link>
             </Button>
           </div>
         </div>

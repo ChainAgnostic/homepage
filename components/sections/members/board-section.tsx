@@ -5,6 +5,18 @@ import { ExternalLink } from "lucide-react";
 export function BoardSection() {
   const boardMembers = [
     {
+      name: "Juan Caballero",
+      github: "bumblefudge",
+      organization: "Independent",
+      address: "eip155:1:0xdEaDff53a9d726c59C1b5377dE147CB13Dd7c108",
+    },
+    {
+      name: "Gregory Rocco",
+      github: "obstropolos",
+      organization: "Spruce Founder",
+      address: "eip155:1:0x4Aa43327b1a7c60D6570F8692339EFC1f46bdF85",
+    },
+    {
       name: "Pedro Gomes",
       github: "pedrouid",
       organization: "WalletConnect Founder",
@@ -21,31 +33,6 @@ export function BoardSection() {
       github: "oed",
       organization: "Ceramic Founder",
       address: "eip155:1:0x9fA6c303300ed23CeFB0b1106aE898810DC01cC3",
-    },
-    {
-      name: "Gregory Rocco",
-      github: "obstropolos",
-      organization: "Spruce Founder, Independent",
-      address: "eip155:1:0x4Aa43327b1a7c60D6570F8692339EFC1f46bdF85",
-    },
-    {
-      name: "Olaf Tomalka",
-      github: "ritave",
-      organization: "MetaMask Snaps Lead",
-      address: "eip155:1:0xd6CE8bCa06795CC1711DFd4927A6EBde6C86F1E2",
-    },
-    {
-      name: "Boris Mann",
-      github: "bmann",
-      organization: "Fission Founder",
-      address: "eip155:1:0xA8C7372dC993d7510C9c45425807d463967cbb12",
-    },
-    {
-      name: "Juan Caballero",
-      github: "bumblefudge",
-      organization: "Acting Executive Director, Independent",
-      role: "Chairman/Tiebreaker",
-      address: "eip155:1:0xf5fEcE320f378bbAED76F38e7a9e9Fa5048b5A93",
     },
   ];
 
@@ -75,11 +62,9 @@ export function BoardSection() {
               <div className="flex items-start justify-between mb-3">
                 <div>
                   <h3 className="font-semibold text-lg">{member.name}</h3>
-                  {member.role && (
-                    <span className="text-xs text-primary font-medium">
-                      {member.role}
-                    </span>
-                  )}
+                  <p className="text-sm text-muted-foreground mb-3">
+                    {member.organization}
+                  </p>
                 </div>
                 <Link
                   href={`https://github.com/${member.github}`}
@@ -90,9 +75,7 @@ export function BoardSection() {
                   <ExternalLink className="h-4 w-4" />
                 </Link>
               </div>
-              <p className="text-sm text-muted-foreground mb-3">
-                {member.organization}
-              </p>
+
               <div className="text-xs font-mono bg-muted p-2 rounded break-all">
                 {member.address}
               </div>

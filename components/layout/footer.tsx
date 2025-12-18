@@ -88,7 +88,7 @@ export function Footer() {
         </div>
         <div className="border-t border-border pt-8">
           <p className="text-sm text-muted-foreground text-center">
-            © {new Date().getFullYear()} Chain Agnostic Standards Alliance.
+            © {new Date().getFullYear()} Chain Agnostic Standards Alliance
           </p>
         </div>
       </div>

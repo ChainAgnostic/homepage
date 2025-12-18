@@ -54,7 +54,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative w-full lg:w-[400px] h-[400px] flex-shrink-0">
+          <div className="relative w-full lg:w-[400px] h-[400px] shrink-0">
             <div className="absolute inset-0 flex items-center justify-center">
               {blockchainLogos.map((logo, index) => (
                 <div
