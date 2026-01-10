@@ -39,14 +39,6 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="https://github.com/ChainAgnostic/CASA"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  GitHub
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="https://discord.gg/KxqKHppC39"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
