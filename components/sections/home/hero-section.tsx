@@ -41,7 +41,7 @@ export function HeroSection() {
                 className="bg-primary hover:bg-primary/90"
               >
                 <Link
-                  href="https://github.com/ChainAgnostic/CAIPs"
+                  href="https://standards.chainagnostic.org/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
