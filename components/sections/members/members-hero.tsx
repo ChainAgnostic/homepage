@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export function MembersHero() {
   return (
-    <section className="border-b border-border bg-gradient-to-b from-muted/50 to-background">
+    <section className="border-b border-border bg-linear-to-b from-muted/50 to-background">
       <div className="container px-4 py-16 mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <h1 className="text-5xl font-bold tracking-tight mb-6 text-balance">

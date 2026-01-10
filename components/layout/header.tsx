@@ -61,7 +61,7 @@ export function Header() {
           className="hidden md:inline-flex bg-transparent"
         >
           <Link
-            href="https://github.com/ChainAgnostic/CAIPs"
+            href="https://standards.chainagnostic.org/"
             target="_blank"
             rel="noopener noreferrer"
           >
