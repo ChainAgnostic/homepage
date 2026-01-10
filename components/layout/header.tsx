@@ -38,12 +38,12 @@ export function Header() {
             Groups
           </Link>
           <Link
-            href="https://chainagnostic.org/"
+            href="https://blog.chainagnostic.org"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
-            Specs
+            Blog
           </Link>
           <Link
             href="https://github.com/ChainAgnostic/CASA"
